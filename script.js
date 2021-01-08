@@ -5,6 +5,7 @@ const list = document.querySelector('#list')
 const form = document.querySelector('#form')
 const text = document.querySelector('#text')
 const amount = document.querySelector('#amount')
+// const emoticon = document.querySelectorAll('.emoticon')
 
 
 const localStorageTransactions = JSON.parse(localStorage.getItem('transactions'))
@@ -74,10 +75,9 @@ function addTransactionDOM(transaction) {
 // update the balance, income and expense
 function updateValues() {
     const amounts = transactions.map(transaction => transaction.amount)
-    balance.classList.add(amounts < 0 ? 'minus' : 'plus');
-
 
     const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
+    // balance.classList.add(total < 0 ? 'minus' : 'plus');
 
     const income = amounts
         .filter(item => item > 0)

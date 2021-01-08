@@ -19,14 +19,28 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-.balance.minus {
+
+.minus {
     color: #e74c3c;
 
 }
 
-.balance.plus {
+.plus {
     color: #2ecc71;
 
+}
+
+.emoticon {
+    font-size: 30px;
+    display: none;
+}
+
+.emoticon.sad {
+    display: flex;
+}
+
+.emoticon.happy {
+    display: flex;
 }
 
 .container {
