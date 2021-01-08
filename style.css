@@ -19,6 +19,30 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+
+.minus {
+    color: #e74c3c;
+
+}
+
+.plus {
+    color: #2ecc71;
+
+}
+
+.emoticon {
+    font-size: 30px;
+    display: none;
+}
+
+.emoticon.sad {
+    display: flex;
+}
+
+.emoticon.happy {
+    display: flex;
+}
+
 .container {
     margin: 30px auto;
     width: 350px;
