@@ -45,6 +45,13 @@ function addTransaction(e) {
 function generateID() {
     return Math.floor(Math.random() * 100000000)
 }
+//format money number
+// function formatMoney(number) {
+//     return 'Rp' + number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+// }
+function formatMoney(number) {
+    return 'Rp' + number.replace(/\d(?=(\d{3})+\.)/g, '$&,');
+}
 
 // add transactions to dom list
 function addTransactionDOM(transaction) {
@@ -72,6 +79,7 @@ function updateValues() {
     const amounts = transactions.map(transaction => transaction.amount)
 
     const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
+    // const total = amounts.reduce((acc, item) => ((acc += item), 0))
 
     const income = amounts
         .filter(item => item > 0)
@@ -83,9 +91,12 @@ function updateValues() {
         .reduce((acc, item) => (acc += item), 0) * -1
     ).toFixed(2);
 
-    balance.innerText = `Rp${total}`;
-    money_plus.innerText = `Rp${income}`;
-    money_minus.innerText = `Rp${expense}`;
+    // balance.innerText = `Rp${total}`;
+    balance.innerText = `${formatMoney(total)}`;
+    // money_plus.innerText = `Rp${income}`;
+    money_plus.innerText = `${formatMoney(income)}`;
+    // money_minus.innerText = `Rp${expense}`;
+    money_minus.innerText = `${formatMoney(expense)}`;
 }
 
 // fucntion remove transaction by id
