@@ -94,6 +94,10 @@ function updateValues() {
     money_minus.innerText = `${formatMoney(expense)}`;
 }
 
+//edit transaction
+function editTransaction(id) {
+    console.log(id);
+}
 // fucntion remove transaction by id
 function removeTransaction(id) {
     transactions = transactions.filter(transaction => transaction.id !== id);
