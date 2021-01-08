@@ -121,3 +121,8 @@ init();
 
 
 form.addEventListener('submit', addTransaction)
+window.addEventListener('keydown', e => {
+    if (e.keycode == 13) {
+        addTransaction
+    }
+})
