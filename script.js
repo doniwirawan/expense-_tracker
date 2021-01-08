@@ -7,13 +7,6 @@ const text = document.querySelector('#text')
 const amount = document.querySelector('#amount')
 
 
-// const dummyTransactions = [
-//     { id: 1, text: 'flower', amount: -20 },
-//     { id: 2, text: 'book', amount: -30 },
-//     { id: 3, text: 'salary', amount: 300 },
-//     { id: 4, text: 'laptop', amount: 150 }
-// ]
-
 const localStorageTransactions = JSON.parse(localStorage.getItem('transactions'))
 
 
@@ -90,9 +83,9 @@ function updateValues() {
         .reduce((acc, item) => (acc += item), 0) * -1
     ).toFixed(2);
 
-    balance.innerText = `$${total}`;
-    money_plus.innerText = `$${income}`;
-    money_minus.innerText = `$${expense}`;
+    balance.innerText = `Rp${total}`;
+    money_plus.innerText = `Rp${income}`;
+    money_minus.innerText = `Rp${expense}`;
 }
 
 // fucntion remove transaction by id
