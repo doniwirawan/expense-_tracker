@@ -74,6 +74,8 @@ function addTransactionDOM(transaction) {
 // update the balance, income and expense
 function updateValues() {
     const amounts = transactions.map(transaction => transaction.amount)
+    balance.classList.add(amounts < 0 ? 'minus' : 'plus');
+
 
     const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
 

@@ -19,6 +19,16 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+.balance.minus {
+    color: #e74c3c;
+
+}
+
+.balance.plus {
+    color: #2ecc71;
+
+}
+
 .container {
     margin: 30px auto;
     width: 350px;
