@@ -115,6 +115,7 @@ function editTransaction(idku) {
             amount.value = `${item.amount} `
         }
     });
+    removeTransaction(idku)
 
 
 }
