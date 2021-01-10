@@ -79,7 +79,8 @@ function updateValues() {
     const amounts = transactions.map(transaction => transaction.amount)
 
     const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
-    balance.classList.add(total < 0 ? 'minus' : 'plus');
+    // balance.classList.add(total < 0 ? 'minus' : 'plus');
+    setBalanceColor(total)
 
     const income = amounts
         .filter(item => item > 0)
@@ -94,6 +95,12 @@ function updateValues() {
     balance.innerText = `${formatMoney(total)}`;
     money_plus.innerText = `${formatMoney(income)}`;
     money_minus.innerText = `${formatMoney(expense)}`;
+}
+
+function setBalanceColor(total) {
+    setInterval(() => {
+        balance.classList.add(total < 0 ? 'minus' : 'plus');
+    }, 100);
 }
 
 //edit transaction
@@ -134,5 +141,6 @@ form.addEventListener('submit', addTransaction)
 window.addEventListener('keydown', e => {
     if (e.keycode == 13) {
         addTransaction
+        setBalanceColor
     }
 })
