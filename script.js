@@ -5,14 +5,14 @@ const list = document.querySelector('#list')
 const form = document.querySelector('#form')
 const text = document.querySelector('#text')
 const amount = document.querySelector('#amount')
-// const emoticon = document.querySelectorAll('.emoticon')
 
 
 const localStorageTransactions = JSON.parse(localStorage.getItem('transactions'))
 
 
-let transactions = localStorage.getItem('transactions') !== null ? localStorageTransactions : [];
 
+let transactions = localStorage.getItem('transactions') !== null ? localStorageTransactions : [];
+console.log(transactions)
 
 
 //add transaction
@@ -79,7 +79,7 @@ function updateValues() {
     const amounts = transactions.map(transaction => transaction.amount)
 
     const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
-    // balance.classList.add(total < 0 ? 'minus' : 'plus');
+    balance.classList.add(total < 0 ? 'minus' : 'plus');
 
     const income = amounts
         .filter(item => item > 0)
@@ -97,8 +97,10 @@ function updateValues() {
 }
 
 //edit transaction
-function editTransaction(id) {
-    console.log(id);
+function editTransaction(transaction) {
+    console.log(transaction);
+
+
 }
 // fucntion remove transaction by id
 function removeTransaction(id) {
