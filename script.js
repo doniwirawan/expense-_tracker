@@ -119,11 +119,12 @@ function editTransaction(idku) {
     // alert('Berhasil Diubah');
     text.style.outline = '1px solid red';
     amount.style.outline = '1px solid red';
-    document.querySelector('.btn').innerText = 'Simpan Perubahan';
+    // document.querySelector('.btn').innerText = 'Simpan Perubahan';
     setTimeout(() => {
         text.style.outline = 'none';
         amount.style.outline = 'none';
     }, 1500);
+
 
 }
 
