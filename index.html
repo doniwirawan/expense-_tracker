@@ -1,26 +1,42 @@
  <!DOCTYPE html>
  <html lang="en">
+
  <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="Description"
+         content="website to know how much you spent, income on daily basis and know how much is your  balance" />
+     <!-- Mendeklarasikan warna yang muncul pada address bar Chrome versi seluler -->
+     <meta name="theme-color" content="#414f57" />
+     <!-- Mendeklarasikan ikon untuk iOS -->
+     <meta name="apple-mobile-web-app-capable" content="yes" />
+     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+     <meta name="apple-mobile-web-app-title" content="Nama Situs" />
+     <link rel="apple-touch-icon" href="favicon.ico" />
+     <!-- Mendeklarasikan ikon untuk Windows -->
+     <meta name="msapplication-TileImage" content="favicon.ico" />
+     <meta name="msapplication-TileColor" content="#000000" />
+
      <title>expense tracker</title>
+     <link rel="manifest" href="manifest.json">
      <link rel="stylesheet" href="style.css">
  </head>
+
  <body>
      <h2>Expense Tracker</h2>
      <div class="container">
          <h4>Balance Kamu</h4>
          <h1 id="balance" class="balance">Rp0.00 </h1>
-        
+
          <div class="inc-exp-container">
-            <div>
-                <h4>Pemasukkan</h4>
-                <p id="money-plus" class="money plus">+Rp0.00</p>
-            </div>
-            <div>
-                <h4>Pengeluaran</h4>
-                <p id="money-minus" class="money minus">-Rp0.00</p>
-            </div>
+             <div>
+                 <h4>Pemasukkan</h4>
+                 <p id="money-plus" class="money plus">+Rp0.00</p>
+             </div>
+             <div>
+                 <h4>Pengeluaran</h4>
+                 <p id="money-minus" class="money minus">-Rp0.00</p>
+             </div>
          </div>
 
          <h3>Riwayat</h3>
@@ -28,19 +44,28 @@
          </ul>
 
          <h3>Tambah Transaksi Baru</h3>
-         <form  id="form">
+         <form id="form">
              <div class="form-control">
                  <label for="text">Judul</label>
                  <input type="text" id="text" placeholder="Masukkan Judul...">
              </div>
              <div class="form-control">
-                 <label for="amount">Jumlah <br>(Negatif - Pengeluaran,  Positif - Pemasukkan)</label>
+                 <label for="amount">Jumlah <br>(Negatif - Pengeluaran, Positif - Pemasukkan)</label>
                  <input type="text" name="" id="amount" placeholder="Masukkan Jumlah...">
              </div>
-            <button class="btn ">Tambah Transaksi</button>
+             <button class="btn ">Tambah Transaksi</button>
          </form>
 
      </div>
+     <script>
+         if ('serviceWorker' in navigator) {
+             window.addEventListener('load', () => {
+                 navigator.serviceWorker.register('/sw.js');
+             });
+         }
+     </script>
+     <script src="sw.js"></script>
      <script src="script.js"></script>
  </body>
+
  </html>

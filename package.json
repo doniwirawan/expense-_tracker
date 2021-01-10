@@ -1,0 +1,19 @@
+{
+  "name": "expense-tracker",
+  "version": "1.0.0",
+  "description": "- app untuk menghitung pengeluaran dan pemasukkan \r - belajar dari brad traversy\r - dokumnetasi proses belajar ✌",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doniwirawan/expense-_tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/doniwirawan/expense-_tracker/issues"
+  },
+  "homepage": "https://github.com/doniwirawan/expense-_tracker#readme"
+}

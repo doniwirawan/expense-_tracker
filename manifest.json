@@ -1,0 +1,21 @@
+{
+ "name": "expense tracker",
+ "short_name": "expense",
+ "description": "website to know how much you spent, income on daily basis and know how much is your  balance",
+ "lang": "en-US",
+ "dir": "ltr",
+ "theme_color": "#414f57",
+ "start_url": ".",
+ "background_color": "#000",
+ "display": "standalone",
+ "orientation": "portrait-primary",
+ "icons": [{
+   "src": "favicon.ico",
+   "sizes": "72x72",
+   "type": "image/png"
+  }, {
+   "src": "favicon.ico",
+   "sizes": "512x512",
+   "type": "image/png"
+  }]
+}
