@@ -5,6 +5,9 @@ const list = document.querySelector('#list')
 const form = document.querySelector('#form')
 const text = document.querySelector('#text')
 const amount = document.querySelector('#amount')
+const form_edit = document.querySelector('#form-edit')
+const text_edit = document.querySelector('#text-edit')
+const amount_edit = document.querySelector('#amount-edit')
 
 
 const localStorageTransactions = JSON.parse(localStorage.getItem('transactions'))
@@ -12,8 +15,8 @@ const localStorageTransactions = JSON.parse(localStorage.getItem('transactions')
 
 
 let transactions = localStorage.getItem('transactions') !== null ? localStorageTransactions : [];
-console.log(transactions)
-
+// console.log(transactions)
+// console.log(JSON.parse(localStorage.transactions));
 
 //add transaction
 function addTransaction(e) {
@@ -62,7 +65,7 @@ function addTransactionDOM(transaction) {
     item.classList.add(transaction.amount < 0 ? 'minus' : 'plus');
 
     item.innerHTML = `
-        ${transaction.text} <span>${sign}${Math.abs(
+        ${transaction.text} <span>Rp${sign}${Math.abs(
         transaction.amount
     )}</span> <button class="delete-btn" onclick="removeTransaction(${transaction.id
         })">x</button>
@@ -104,11 +107,66 @@ function setBalanceColor(total) {
 }
 
 //edit transaction
-function editTransaction(transaction) {
-    console.log(transaction);
+function editTransaction(idku) {
+
+
+
+    transactions.map(item => {
+
+        if (item.id == idku) {
+            // document.querySelector('body').innerHTML = `
+            // <div class="modal>
+            //     <h3>Edit Transaksi </h3>
+            //     <form  id="form-edit">
+            //         <div class="form-control">
+            //             <label for="text">Judul</label>
+            //             <input type="text" id="text-edit" value="${item.text}" placeholder="Masukkan Judul...">
+            //         </div>
+            //         <div class="form-control">
+            //             <label for="amount">Jumlah <br>(Negatif - Pengeluaran,  Positif - Pemasukkan)</label>
+            //             <input type="text" name="" value="${item.amount}" id="amount-edit" placeholder="Masukkan Jumlah...">
+            //         </div>
+            //         <button class="btn btn-edit" onclick="saveEditData(${idku})">Edit Transaksi</button>
+            //     </form>
+            // </div>
+            // `
+            text.value = `${item.text} `
+            amount.value = `${item.amount} `
+        }
+    });
 
 
 }
+
+// function save edited data
+// function saveEditData(idku) {
+
+// if (text_edit.value.trim() === '' || amount_edit.value.trim() === '') {
+//     alert('Please add text and amount')
+// } else {
+// const transaction = {
+// id: idku,
+// text: text.value,
+// amount: +amount.value
+// }
+
+// transactions.push(transaction)
+
+// addTransactionDOM(transaction)
+
+// updateValues();
+
+
+// updateLocalStorage();
+
+// text.value = '';
+// amount.value = '';
+// }
+// }
+
+
+
+
 // fucntion remove transaction by id
 function removeTransaction(id) {
     transactions = transactions.filter(transaction => transaction.id !== id);
